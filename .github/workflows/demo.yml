@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
@@ -15,14 +15,14 @@ jobs:
         with:
           command: npm run ui-regression
       - name: Uploading artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: cypress-execution-report
           path: cypress/reports/html
           retention-days: 30
       - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v6
+        uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_USERNAME: Erika Tavera
