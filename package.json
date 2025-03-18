@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ui-regression": "cypress run --browser chrome --spec cypress/e2e/1-getting-started/**.js",
+    "calendar-regression": "cypress run --browser chrome --spec cypress/e2e/productionBetaVendor/**.js",
     "ui-regression-allure": "cypress run --browser chrome --spec cypress/e2e/1-getting-started/**.js --env allure=true",
     "allure:clear": "rm -r allure-results/ allure-report cypress/screenshots || true",
     "allure:report": "allure generate allure-results --clean -o allure-report",
